@@ -1,0 +1,26 @@
+﻿@using System.Globalization;
+@using AKSoftware.Localization.MultiLanguages;
+@inject ILanguageContainerService languageContainer
+
+ <select @onclick="() => OnDropdownClick(SelectedValue)" @bind="@SelectedValue">
+    @foreach (var culture in cultures)
+    {
+        <option value="@culture">@culture.DisplayName</option>
+    }
+   </select>
+
+@code {
+    public string SelectedValue { get; set; } = "en-US";
+    CultureInfo[] cultures = new[]
+    {
+            new CultureInfo("en-US"),
+            new CultureInfo("fr-FR"),
+            new CultureInfo("bg-BG"),
+            new CultureInfo("ja-JP"),
+    };
+
+    public void OnDropdownClick(string selectedValue)
+    {
+        languageContainer.SetLanguage(System.Globalization.CultureInfo.GetCultureInfo(selectedValue));
+    }
+}
