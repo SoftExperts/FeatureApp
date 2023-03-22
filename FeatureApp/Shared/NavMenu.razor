@@ -1,24 +1,25 @@
 ﻿@using FeatureApp.Pages
-
+@using AKSoftware.Localization.MultiLanguages;
+@inject ILanguageContainerService languageContainer
 <header class="header" id="header">
     <nav class="nav container">
         <a href="#" class="nav__logo">
-            <i class='bx bxs-watch nav__logo-icon'></i> Rolex
+            <i class='bx bxs-watch nav__logo-icon'></i>@languageContainer.Keys["Rolex"]
         </a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <NavLink class="nav__item">
-                    <a href="home" class="nav__link active-link">Home</a>
+                    <a href="home" class="nav__link active-link">@languageContainer.Keys["Home"]</a>
                 </NavLink>
                 <li class="nav__item">
-                    <a href="featured" class="nav__link">Featured</a>
+                    <a href="featured" class="nav__link">@languageContainer.Keys["Featured"]</a>
                 </li>
                 <li class="nav__item">
-                    <a href="products" class="nav__link">Products</a>
+                    <a href="products" class="nav__link">@languageContainer.Keys["Products"]</a>
                 </li>
                 <li class="nav__item">
-                    <a href="new" class="nav__link">New</a>
+                    <a href="new" class="nav__link">@languageContainer.Keys["New"]</a>
                 </li>
             </ul>
 
@@ -46,5 +47,18 @@
     public async Task ShowAlertWindow()
     {
         await jsRuntime.InvokeVoidAsync("ShowAlertWindow");
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            languageContainer.InitLocalizedComponent(this);
+        }
+        catch (Exception)
+        {
+            
+            throw;
+        }
+       
     }
 }

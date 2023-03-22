@@ -2,8 +2,8 @@
 @using AKSoftware.Localization.MultiLanguages;
 @inject ILanguageContainerService languageContainer
 
- <select @onclick="() => OnDropdownClick(SelectedValue)" @bind="@SelectedValue">
-    @foreach (var culture in cultures)
+<select class="fa fa-global" @onclick="() => OnDropdownClick(SelectedValue)" @bind="@SelectedValue">
+     @foreach (var culture in cultures)
     {
         <option value="@culture">@culture.DisplayName</option>
     }
@@ -17,10 +17,28 @@
             new CultureInfo("fr-FR"),
             new CultureInfo("bg-BG"),
             new CultureInfo("ja-JP"),
+            new CultureInfo("af-ZA"),
+            new CultureInfo("zh-SG"),
+            new CultureInfo("pt-BR"),
+            new CultureInfo("pt-PT"),
+            new CultureInfo("zh-TW"),
+            new CultureInfo("zh-SG"),
+            new CultureInfo("tr-TR"),
+            new CultureInfo("ur-PK"),
+            new CultureInfo("da-DK"),
+
     };
 
-    public void OnDropdownClick(string selectedValue)
+    public async Task OnDropdownClick(string selectedValue)
     {
-        languageContainer.SetLanguage(System.Globalization.CultureInfo.GetCultureInfo(selectedValue));
+        try
+        {
+            languageContainer.SetLanguage(System.Globalization.CultureInfo.GetCultureInfo(selectedValue));
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 }

@@ -5,62 +5,62 @@
 <!--==================== NEW ====================-->
 <section class="new section container" id="new">
     <h2 class="section__title">
-        New Arrivals
+        @languageContainer.Keys["NewArrivals"]
     </h2>
 
     <div class="new__container">
         <div class="swiper new-swiper">
             <div class="swiper-wrapper">
                 <article class="new__card swiper-slide">
-                    <span class="new__tag">@languageContainer.Keys["HelloWorld"]: New</span>
+                    <span class="new__tag">@languageContainer.Keys["New"] </span>
 
                     <img src="assets/img/new1.png" alt="" class="new__img">
 
                     <div class="new__data">
-                        <h3 class="new__title">Longines rose</h3>
+                        <h3 class="new__title">@languageContainer.Keys["Longinesrose"]</h3>
                         <span class="new__price">$980</span>
                     </div>
 
-                    <button class="button new__button">ADD TO CART</button>
+                    <button class="button new__button">@languageContainer.Keys["Cart"]</button>
                 </article>
 
                 <article class="new__card swiper-slide">
-                    <span class="new__tag">New</span>
+                    <span class="new__tag">@languageContainer.Keys["New"]</span>
 
                     <img src="assets/img/new2.png" alt="" class="new__img">
 
                     <div class="new__data">
-                        <h3 class="new__title">Jazzmaster</h3>
+                        <h3 class="new__title">@languageContainer.Keys["Jazzmaster"]</h3>
                         <span class="new__price">$1150</span>
                     </div>
 
-                    <button class="button new__button">ADD TO CART</button>
+                    <button class="button new__button">@languageContainer.Keys["Cart"]</button>
                 </article>
 
                 <article class="new__card swiper-slide">
-                    <span class="new__tag">New</span>
+                    <span class="new__tag">@languageContainer.Keys["New"]</span>
 
                     <img src="assets/img/new3.png" alt="" class="new__img">
 
                     <div class="new__data">
-                        <h3 class="new__title">Dreyfuss gold</h3>
+                        <h3 class="new__title">@languageContainer.Keys["Dreyfussgold"]</h3>
                         <span class="new__price">$750</span>
                     </div>
 
-                    <button class="button new__button">ADD TO CART</button>
+                    <button class="button new__button">@languageContainer.Keys["Cart"]</button>
                 </article>
 
                 <article class="new__card swiper-slide">
-                    <span class="new__tag">New</span>
+                    <span class="new__tag">@languageContainer.Keys["New"]</span>
 
                     <img src="assets/img/new4.png" alt="" class="new__img">
 
                     <div class="new__data">
-                        <h3 class="new__title">Portuguese rose</h3>
+                        <h3 class="new__title">@languageContainer.Keys["Portugueserose"]</h3>
                         <span class="new__price">$1590</span>
                     </div>
 
-                    <button class="button new__button">ADD TO CART</button>
+                    <button class="button new__button">@languageContainer.Keys["Cart"]</button>
                 </article>
             </div>
         </div>
@@ -70,6 +70,14 @@
 {
     protected override async Task OnInitializedAsync()
     {
-        languageContainer.InitLocalizedComponent(this);
+        try
+        {
+            languageContainer.InitLocalizedComponent(this);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 }

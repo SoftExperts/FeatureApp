@@ -10,17 +10,31 @@
   <ItemGroup>
     <None Remove="Resources\af-ZA.yml" />
     <None Remove="Resources\bg-BG.yml" />
+    <None Remove="Resources\da-DK.yml" />
     <None Remove="Resources\en-US.yml" />
     <None Remove="Resources\fr-FR.yml" />
     <None Remove="Resources\ja-JP.yml" />
+    <None Remove="Resources\pt-BR.yml" />
+    <None Remove="Resources\pt-PT.yml" />
+    <None Remove="Resources\tr-TR.yml" />
+    <None Remove="Resources\ur-PK.yml" />
+    <None Remove="Resources\zh-SG.yml" />
+    <None Remove="Resources\zh-TW.yml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\af-ZA.yml" />
     <EmbeddedResource Include="Resources\bg-BG.yml" />
+    <EmbeddedResource Include="Resources\da-DK.yml" />
     <EmbeddedResource Include="Resources\en-US.yml" />
     <EmbeddedResource Include="Resources\fr-FR.yml" />
     <EmbeddedResource Include="Resources\ja-JP.yml" />
+    <EmbeddedResource Include="Resources\pt-BR.yml" />
+    <EmbeddedResource Include="Resources\pt-PT.yml" />
+    <EmbeddedResource Include="Resources\tr-TR.yml" />
+    <EmbeddedResource Include="Resources\ur-PK.yml" />
+    <EmbeddedResource Include="Resources\zh-SG.yml" />
+    <EmbeddedResource Include="Resources\zh-TW.yml" />
   </ItemGroup>
 
   <ItemGroup>

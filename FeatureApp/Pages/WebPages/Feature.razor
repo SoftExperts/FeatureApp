@@ -9,42 +9,42 @@
 
     <div class="featured__container grid">
         <article class="featured__card">
-            <span class="featured__tag"> @languageContainer.Keys["HelloWorld"] :Sale</span>
+            <span class="featured__tag"> @languageContainer.Keys["Sale"]</span>
 
             <img src="assets/img/featured1.png" alt="" class="featured__img">
 
             <div class="featured__data">
-                <h3 class="featured__title">Jazzmaster</h3>
+                <h3 class="featured__title">@languageContainer.Keys["Jazzmaster"]</h3>
                 <span class="featured__price">$1050</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">@languageContainer.Keys["Cart"]</button>
         </article>
 
         <article class="featured__card">
-            <span class="featured__tag">Sale</span>
+            <span class="featured__tag">@languageContainer.Keys["Sale"]</span>
 
             <img src="assets/img/featured2.png" alt="" class="featured__img">
 
             <div class="featured__data">
-                <h3 class="featured__title">Ingersoll</h3>
+                <h3 class="featured__title">@languageContainer.Keys["Ingersoll"]</h3>
                 <span class="featured__price">$250</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">@languageContainer.Keys["Cart"]</button>
         </article>
 
         <article class="featured__card">
-            <span class="featured__tag">Sale</span>
+            <span class="featured__tag">@languageContainer.Keys["Sale"]</span>
 
             <img src="assets/img/featured3.png" alt="" class="featured__img">
 
             <div class="featured__data">
-                <h3 class="featured__title">Rose gold</h3>
+                <h3 class="featured__title">@languageContainer.Keys["Rosegold"]</h3>
                 <span class="featured__price">$890</span>
             </div>
 
-            <button class="button featured__button">ADD TO CART</button>
+            <button class="button featured__button">@languageContainer.Keys["Cart"]</button>
         </article>
     </div>
 </section>
@@ -52,6 +52,14 @@
 {
     protected override async Task OnInitializedAsync()
     {
-        languageContainer.InitLocalizedComponent(this);
+        try
+        {
+            languageContainer.InitLocalizedComponent(this);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 }

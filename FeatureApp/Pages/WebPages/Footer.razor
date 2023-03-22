@@ -6,7 +6,7 @@
 <footer class="footer section">
     <div class="footer__container container grid">
         <div class="footer__content">
-            <h3 class="footer__title">Our information</h3>
+            <h3 class="footer__title">@languageContainer.Keys["Ourinformation"]</h3>
 
             <ul class="footer__list">
                 <li>1234 - Peru</li>
@@ -15,39 +15,39 @@
             </ul>
         </div>
         <div class="footer__content">
-            <h3 class="footer__title">About Us : @languageContainer.Keys["HelloWorld"]: </h3>
+            <h3 class="footer__title">@languageContainer.Keys["AboutUs"]</h3>
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">Support Center</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["SupportCenter"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Customer Support</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["CustomerSupport"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">About Us</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["AboutUs"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Copy Right</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["CopyRight"]</a>
                 </li>
             </ul>
         </div>
 
         <div class="footer__content">
-            <h3 class="footer__title">Product</h3>
+            <h3 class="footer__title">@languageContainer.Keys["Product"]</h3>
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">Road bikes</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["Roadbikes"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Mountain bikes</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["Mountainbikes"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Electric</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["Electric"]</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Accesories</a>
+                    <a href="#" class="footer__link">@languageContainer.Keys["Accesories"]</a>
                 </li>
             </ul>
         </div>
@@ -77,6 +77,14 @@
 {
     protected override async Task OnInitializedAsync()
     {
-        languageContainer.InitLocalizedComponent(this);
+        try
+        {
+            languageContainer.InitLocalizedComponent(this);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 }
