@@ -2,15 +2,15 @@
 @using AKSoftware.Localization.MultiLanguages;
 @inject ILanguageContainerService languageContainer
 
-<select class="fa fa-global" @onclick="() => OnDropdownClick(SelectedValue)" @bind="@SelectedValue">
-     @foreach (var culture in cultures)
+<select class="rounded-end border border-dark border-2" @onclick="() => OnDropdownClick(SelectedValue)" @bind="@SelectedValue">
+    @foreach (var culture in cultures)
     {
         <option value="@culture">@culture.DisplayName</option>
     }
    </select>
 
 @code {
-    public string SelectedValue { get; set; } = "en-US";
+     public string SelectedValue { get; set; } = "en-US";
     CultureInfo[] cultures = new[]
     {
             new CultureInfo("en-US"),
